@@ -25,7 +25,7 @@ class He:
             self.x -= self.settings.bd_speed
         if self.moving_top and self.rect.top > self.screen_rect.top:
             self.y -= self.settings.bd_speed
-        if self.moving_bottom and self.rect.bottom > 0:
+        if self.moving_bottom and self.rect.bottom < self.screen_rect.bottom:
             self.y += self.settings.bd_speed                
         
         self.rect.x = self.x

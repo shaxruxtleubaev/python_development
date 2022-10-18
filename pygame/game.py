@@ -13,6 +13,7 @@ class App:
         pygame.display.set_caption('Begzad Invasion')
         self.bd = He(self)
         self.bg_color = self.settings.bg_color
+        self.bg = pygame.image.load("image/labr.jpg")
 
     def run_game(self):
         while True:
@@ -52,7 +53,7 @@ class App:
             self.bd.moving_bottom = False
 
     def _upd_screen(self):
-        self.screen.fill(self.bg_color)
+        self.screen.blit(self.bg, (0, 0))
         self.bd.blithim()
         pygame.display.flip()
 

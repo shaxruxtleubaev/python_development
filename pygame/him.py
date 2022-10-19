@@ -1,4 +1,5 @@
 import pygame
+from settings import Settings
 
 class He:
     def __init__(self, game):

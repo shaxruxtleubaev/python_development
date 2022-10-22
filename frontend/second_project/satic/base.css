@@ -1,0 +1,40 @@
+body {
+    background-color:darkcyan;
+}
+ul {
+    font-family: impact;
+    font-size: 30px;
+    display: inline;
+    display: inline-flex;
+    transform: scale(1);
+}
+ul > li {
+    margin: 10px;
+    font-family: 'Courier New';
+    font-size: 25px;
+}
+ol > li {
+    font-family: 'Gill Sans';
+    font-size: 28px;
+}
+#b {
+    font-size: 60px;
+}
+.a {
+    font-size: 70px;
+    font-style: initial;
+}
+p {
+    font-family: monospace;
+    font-size: 50px;
+}
+div {
+    text-shadow: 30px;
+    font-size: 50px;
+    border: solid 10px cyan;
+    border-radius: 30px;
+    margin: 30px;
+    padding: 30px;
+    background-color: mediumslateblue;
+    width: 50%;
+}

@@ -4,30 +4,25 @@ body {
     letter-spacing: 0,25em;
 }
 #page {
-    max-width: 1200px;
-    min-width: 720px;
+    width: 100%;
     margin: 10px auto 10px auto;
     padding: 20px;
 }
 
 ul {
-    width: 50%;
+    width: 100%;
     padding: 15px;
     margin: 0px auto 0px auto;
     text-align: center;
+    position: relative;
 }
+
 
 li {
     display: inline;
     margin: 0px 3px;
 }
-
-p {
-    text-align: center;
-    width: 600px;
-    margin: 20px auto 20px auto;
-}   
-
+  
 a {
     color: #ecf0eb;
     text-transform: uppercase;
@@ -40,18 +35,20 @@ a {
 }
 
 .photo {
-    width: 100%;
+    width:fit-content;
 }
 
 .words {
-    text-align: left;
+    text-align: center;
     color: #e0ded1;
+    width: auto;
     margin-left: 1%;
     margin-bottom: 10%;
 }
 
 .social, .social.on {
     color: black;
+    width: 100%;
     background-color: linear-gradient(-60deg, #6c3 50%, #09f 50%);
     display: inline-block;
     text-decoration: none;

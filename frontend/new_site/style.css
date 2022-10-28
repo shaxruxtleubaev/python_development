@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 750px;
+    color: black;
+    text-align: left;
+}
+h1 {
+    background: #a89c9c;
+    padding: 10px 150px;
+    position: sticky;  /* position: fixed; */
+    top: 0px;
+    left: 50px;
+    width: 100%;
+    padding: 10px;
+    margin: 0%;
+    z-index: 50;
+}
+p {
+    width: 300px;
+    position: relative;
+    top: 20px;
+    left: 100px;
+}

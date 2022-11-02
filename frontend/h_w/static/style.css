@@ -1,0 +1,30 @@
+.container {
+    position: relative;
+    margin: 1%;
+}
+
+.circle {
+    text-align: center;
+    z-index: 9;
+    padding-top: 20px;
+    margin: 1%;
+    width: 100%;
+}
+
+.woman {
+    margin-top: 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.header .top .logo {
+    margin: 10px;
+}
+
+.header .top .words {
+    width: 150px;
+    padding-left: 35%;
+}

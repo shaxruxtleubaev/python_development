@@ -4,13 +4,13 @@ body {
     letter-spacing: 0,25em;
 }
 #page {
-    width: 100%;
+    width: fit-content;
     margin: 10px auto 10px auto;
     padding: 20px;
 }
 
 ul {
-    width: 100%;
+    width: fit-content;
     padding: 15px;
     margin: 0px auto 0px auto;
     text-align: center;
@@ -35,7 +35,7 @@ a {
 }
 
 .photo {
-    width:fit-content;
+    width: fit-content;
 }
 
 .words {
@@ -48,7 +48,7 @@ a {
 
 .social, .social.on {
     color: black;
-    width: 100%;
+    width: fit-content;
     background-color: linear-gradient(-60deg, #6c3 50%, #09f 50%);
     display: inline-block;
     text-decoration: none;
@@ -83,6 +83,10 @@ a:hover{
         0 0 5px #5ddcff,
         0 0 10px #4e00c2;
     }
+}
+
+.content {
+  margin: 3%;
 }
 
 html {

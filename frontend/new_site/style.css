@@ -7,7 +7,7 @@ body {
 h1 {
     background: #a89c9c;
     padding: 10px 150px;
-    position: sticky;  /* position: fixed; */
+    position: fixed;  /* position: fixed; */
     top: 0px;
     left: 50px;
     width: 100%;

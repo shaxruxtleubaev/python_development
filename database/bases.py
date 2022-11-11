@@ -1,8 +1,5 @@
 import psycopg2
-from config import host
-from config import user
-from config import password
-from config import db_name
+from config import host, user, password, db_name
 
 try:
     #Попоробуем подключиться к БД
@@ -12,7 +9,7 @@ try:
         password=password,
         database=db_name
     )
-except Exception as e:
+except Exception as e_:
     print(f"[INFO] Ошибка при подключений")
 finally:
     if connection:

@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import date
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import User
 
 class Blog(models.Model):
 	name = models.CharField(max_length=100)
@@ -34,7 +35,17 @@ class Entry(models.Model):
 	rating = models.IntegerField(default=5)
 
 	def __str__(self):
-		return self.headline	
+		return '%s' % (self.headline)	
 
 	class Meta:
 		verbose_name_plural = _('Entry')
+
+class Quest(models.Model):
+
+	name = models.CharField(max_length=50)
+	content = models.TextField()
+	rating = models.IntegerField(default=0)
+	author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
+	def __str__(self):
+		return self.name

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    {% for project in projects %}
+        <h1>
+            <a href="{% url 'project_detail' project.pk %}">{{project.title}}</a>
+        </h1>
+    {% endfor %}
+{% endblock %}

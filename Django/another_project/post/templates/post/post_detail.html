@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    List of details
+{% endblock %}
+
+{% block content %}
+    <article class="post">
+        <time class="date">
+            published: {{ post.createdAt|date:"SHORT_DATE_FORMAT" }}
+        </time>
+        <h3><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3>
+        <p>{{post.text|linebreaksbr}}</p>
+        <button type="button" class="btn btn-light">Back</button>
+    </article>
+{% endblock %}

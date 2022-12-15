@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container py-3 m-3" style="width: 100%;">
+      <div class="card-body">
+        <a href="/app/" class="card-link">Back</a>
+        <p></p>
+        <h1 class="card-title">{{app.name}}</h1>
+        <p></p>
+        <h5 class="card-subtitle mb-2 text-muted">Available: </h5>
+        {% if app.stock == True %}
+          <p class="card-text">Yes</p>
+        {% endif %}
+        {% if app.stock == False %}
+          <p class="card-text">No</p>
+        {% endif %}
+        <h4 class="card-subtitle mb-2 text-muted">About:</h4>
+        <p class="card-text">{{app.body}}</p>
+        <h6 class="card-subtitle mb-2 text-muted">Color:</h6>
+        <p class="card-text">{{app.color}}</p>
+        <h6 class="card-subtitle mb-2 text-muted">Author:</h6>
+        <p class="card-text">{{app.author}}</p>
+        <h6 class="card-subtitle mb-2 text-muted">Created at:</h6>
+        <p class="card-text">{{app.date}}</p>
+        {% if request.user.is_staff %}
+            <a href="/app/{{app.id}}/delete" class="card-link">Remove</a>
+            <a href="/app/{{app.id}}/update" class="card-link">Change</a>
+        {% endif %}
+      </div>
+    </div>
+{% endblock %}

@@ -9,7 +9,7 @@ class Listings(models.Model):
     square_footage = models.IntegerField('Площадь')
     adress = models.CharField('Адрес', max_length=100)
 
-    # image =
+    image = models.ImageField()
 
     def __str__(self):
         return self.title

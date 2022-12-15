@@ -4,4 +4,12 @@ from .models import Listings
 class ListingsForm(ModelForm):
     
     class Meta:
-        pass
+        model = Listings
+        fields = (
+            'title',
+            'price',
+            'num_bedrooms',
+            'num_bathrooms',
+            'square_footage',
+            'adress'
+        )

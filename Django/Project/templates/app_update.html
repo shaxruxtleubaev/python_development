@@ -3,10 +3,15 @@
 {% block content %}
     <div class="container">
         <h1 class="text-4xl text-gray-900">Change post</h1>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">Apply</button>
+                <button type="sudmit" class="btn btn-outline-success">Apply</button>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
             </form>
     </div>
 {% endblock %}

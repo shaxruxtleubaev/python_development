@@ -9,6 +9,10 @@ class Shop(models.Model):
     stock = models.BooleanField('Сток')
     color = models.CharField('Цвет', max_length=200, blank=True, null=True)
     author = models.CharField('Автор', max_length=200,  blank=True, null=True)
+    image = models.ImageField()
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ('-date',)

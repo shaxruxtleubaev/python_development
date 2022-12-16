@@ -12,4 +12,5 @@ class ShopForm(ModelForm):
             'stock',
             'color',
             'author',
+            'image',
         )

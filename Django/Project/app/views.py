@@ -14,7 +14,7 @@ def app_list(request):
 def app_create(request):
     form = ShopForm()
     if request.method == 'POST':
-        form = ShopForm(request.POST)
+        form = ShopForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
         return redirect('/app/')
@@ -34,7 +34,7 @@ def app_update(request, pk):
     app = Shop.objects.get(id=pk)
     form = ShopForm(instance=app)
     if request.method == 'POST':
-        form = ShopForm(request.POST, instance=app)
+        form = ShopForm(request.POST, instance=app, files=request.FILES)
         if form.is_valid():
             form.save()
         return redirect('/app/')

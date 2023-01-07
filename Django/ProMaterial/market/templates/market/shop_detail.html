@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.title }}</h5>
+                <p class="card-text">{{ object.description }}</p>
+                <p class="card-text">
+                    <i class="fa-solid fa-user"></i>
+                    {{ object.user }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

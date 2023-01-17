@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Contact us 
+{% endblock %}
+
+{% block content %}
+    {% if submitted %}
+        <p class="submitted">
+            Your message was submitted successfully, Thank you!
+        </p>
+    {% else %}
+        <form action="" method="post" novalidate>
+            <table>
+                {% csrf_token %}
+                {{ form.as_table }}
+            </table>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </form>
+    {% endif %}
+
+{% endblock %}

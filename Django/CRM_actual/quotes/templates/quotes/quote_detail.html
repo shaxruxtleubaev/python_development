@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All quotes
+{% endblock title %}
+
+{% block content %}
+    <h1>Quote Detail</h1>
+    <table class="quote">
+        <tr>
+            <td>ID:</td>
+            <td>{{ quote.id }}</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td>{{ quote.name }}</td>
+        </tr>
+        <tr>
+            <td>Company:</td>
+            <td>{{ quote.company }}</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>{{ quote.address }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ quote.email }}</td>
+        </tr>
+        <tr>
+            <td>Web:</td>
+            <td>{{ quote.web }}</td>
+        </tr>
+        <tr>
+            <td>Job Description:</td>
+            <td>{{ quote.description }}</td>
+        </tr>
+        <tr>
+            <td>Sitestatus:</td>
+            <td>{{ quote.sitestatus }}</td>
+        </tr>
+        <tr>
+            <td>Priority:</td>
+            <td>{{ quote.priority }}</td>
+        </tr>
+        <tr>
+            <td>Submitted:</td>
+            <td>{{ quote.submitted|date:"d-m-y" }}</td>
+        </tr>
+        <tr>
+            <td>Quotedate:</td>
+            <td>{{ quote.quotedate|date:"d-m-y"|default:"pending" }}</td>
+        </tr>
+        <tr>
+            <td>Quoteprice:</td>
+            <td>${{ quote.quoteprice|default:"--" }}</td>
+        </tr>
+    </table>
+    <p>
+        <a href="{% url 'show-quotes' %}">Back to quote list</a>
+    </p>
+{% endblock content %}

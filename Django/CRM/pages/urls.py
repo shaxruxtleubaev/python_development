@@ -1,6 +1,6 @@
 from django.urls import path
 from pages.views import home
-from .views import contact
+from pages.views import contact
 
 urlpatterns = [
 	path('', home, {'pagename': ''}, name='home'),

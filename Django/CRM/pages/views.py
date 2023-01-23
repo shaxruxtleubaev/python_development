@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
+from django.http import HttpResponseRedirect
 from pages.models import Page
-from .forms import ContactForm
+from pages.forms import ContactForm
 from django.core.mail import send_mail, get_connection
 
 def home(request, pagename):
-
 	pagename = '/' + pagename
 	#pg = Page.objects.get(permalink=pagename)
 	pg = get_object_or_404(Page, permalink=pagename)
@@ -19,7 +18,7 @@ def home(request, pagename):
 	return render(request, 'pages/page_list.html', context)
 
 def contact(request):
-	submitted = False
+	submitted = False 
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
 		if form.is_valid():
@@ -29,17 +28,19 @@ def contact(request):
 				cd['subject'],
 				cd['message'],
 				cd.get('email', 'noreply@example.com'),
-				['pythonDevCRM.com.pythonanywhere.com'],
-				connection=con
+				['pythonDevCRM.pythonanywhere.com'],
+				connection = con
 			)
 			return HttpResponseRedirect('/contact?submitted=True')
 	else:
 		form = ContactForm()
 		if 'submitted' in request.GET:
-				submitted = True
+			submitted = True
 	context = {
-		'form': form,
-		'page_list': Page.objects.all(),
-		'submitted': submitted
+		'form' : form,
+		'page_list' : Page.objects.all(),
+		'submitted' : submitted
 	}
 	return render(request, 'pages/contact.html', context)
+
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Product Detail
+{% endblock title %}
+
+{% block content %}
+    <section>
+        <H1>Let's go shopping..</H1>
+    </section>
+    <div class="card">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="" id="image">
+        {% endif %}    
+        <h1>{{ product.name }}</h1>
+        <div class="divvv">
+            <p class="price">{{ product.price }}$</p>
+            <button class=""><a href="{{ product.get_absolute_url }}">View</a> <i class="fa fa-eye" aria-hidden="true"></i></button>
+            <button>Add to Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+        </div>
+        <p>{{ product.description }}</p>
+    </div>
+{% endblock content %}

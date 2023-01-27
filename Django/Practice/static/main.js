@@ -1,5 +1,5 @@
 function openNav() {
-  document.getElementById("mySidenav").style.width = "20%";
+  document.getElementById("mySidenav").style.width = "40%";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
@@ -20,3 +20,4 @@ function scrollFunction() {
     document.getElementById("logo").style.fontSize = "20px";
   }
 }
+

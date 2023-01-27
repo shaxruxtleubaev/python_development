@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from ckeditor import fields
 
 class Customer(models.Model):
 
@@ -20,8 +21,8 @@ class Product(models.Model):
 
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    description = models.TextField(blank=True)
-    digital = models.BooleanField(default=False, null=True, blank=True)
+    description = fields.RichTextField(blank=True)
+    digital = models.BooleanField(default=False)
     image = models.ImageField(null=True)
     slug = models.SlugField()
 

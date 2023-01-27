@@ -11,20 +11,17 @@
     </title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/869/869432.png">
     
 </head>
 <body>
-    <header>
-        {% include 'header.html' %}
-    </header>
     
+    {% include 'header.html' %}
     
     {% block content %}
     {% endblock content %}
     
-
-    
-    
+    {% include 'footer.html' %}    
     <script src="{% static 'main.js' %}"></script>
 </body>
 </html>

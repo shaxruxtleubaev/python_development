@@ -4,22 +4,41 @@
     Home Page
 {% endblock title %}
 
+
+<!-- <p>I'm <span class="typed" data-typed-items="Programmer, Freelancer, Moviemaker"></span></p>
+  /**
+   * Hero type effect
+   */
+  const typed = select('.typed')
+  if (typed) {
+    let typed_strings = typed.getAttribute('data-typed-items')
+    typed_strings = typed_strings.split(',')
+    new Typed('.typed', {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000
+    });
+  } -->
 {% block content %}
     <section>
-        <H1>Let's go shopping..</H1>
+        <h1>Let's go shopping.</h1>
     </section>
     {% for product in products %}
 
-        <div class="card">
+        <div class="card" style="width: 300px;">
             {% if product.image %}
                 <img src="{{ product.image.url }}" alt="" id="image">
             {% endif %}    
-            <h1>{{ product.name }}</h1>
+            <h1 style="margin-top: 10px; font-size: 20px;">{{ product.name }}</h1>
             <div class="divvv">
                 <p class="price">{{ product.price }}$</p>
-                <button class=""><a href="{{ product.get_absolute_url }}">View</a> <i class="fa fa-eye" aria-hidden="true"></i></button>
-                <button>Add to Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                <a href="{{ product.get_absolute_url }}">
+                    <button class="">View <i class="fa fa-eye" aria-hidden="true"></i></button>
+                </a>
             </div>
         </div>
-    {% endfor %}    
+        
+    {% endfor %}
 {% endblock content %}

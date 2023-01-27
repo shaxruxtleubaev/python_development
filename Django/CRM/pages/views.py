@@ -16,7 +16,7 @@ def home(request, pagename):
 		'page_list' : Page.objects.all()
 	}
 	return render(request, 'pages/page_list.html', context)
-
+	
 def contact(request):
 	submitted = False 
 	if request.method == 'POST':

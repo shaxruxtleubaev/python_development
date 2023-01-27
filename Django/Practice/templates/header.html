@@ -4,16 +4,21 @@
         <div class="divv"></div>
         <div class="divv"></div>
     </a>
+    <a href="{% url 'product_list' %}" style="padding: 20px;"><i class="fa fa-home" aria-hidden="true"></i></a>
     <div id="navbar-right">
-      <a class="active" href="">Sign Up</a>
-      <a href="">Log in</a>
-      <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge">0</span></a>
+        {% if user.is_authenticated %}
+            <a href=""><i class="fa fa-user-circle" aria-hidden="true"></i> {{user.username}}</a>
+            <a href="{% url 'logout' %}?next=/">Log out</a>
+        {% else %}  
+            <a class="active" href="{% url 'register' %}">Sign Up</a>
+            <a href="{% url 'login' %}?next=/">Log in</a>
+        {% endif %}
+
+        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge">0</span></a>
     </div>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color: white;">&times;</a>
-        <a href="#" style="color: white;">About</a>
-        <a href="#" style="color: white;">Services</a>
-        <a href="#" style="color: white;">Clients</a>
-        <a href="#" style="color: white;">Contact</a>
+        <a href="#" style="color: white; width: 90%;">About</a>
+        <a href="#" style="color: white; width: 90%;">Contact</a>
     </div>
 </div>

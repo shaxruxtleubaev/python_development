@@ -24,7 +24,7 @@ def home_page(request):
     teachers = Teacher.objects.all()
     serializer = TeachersSerializer(teachers, many=True)
     return Response(serializer.data)
-
+    
 # ООП
 class Home(APIView):
 

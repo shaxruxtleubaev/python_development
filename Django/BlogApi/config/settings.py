@@ -29,11 +29,20 @@ INSTALLED_APPS = [
 
     'accounts',
     'posts',
+    'rest_framework',
+    'corsheaders',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}       
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -114,3 +123,18 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://localhost:8000',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+]
+
+# AllowAny -> lyuboy polzovatel ili gost imeet dostup k saytu
+# IsAuthenticated -> tolko zaregistrirovannim polzovatelyam
+# IsAdminUser -> tolko dlya admina
+# IsAuthenticatedReadOnly -> ne zaregistrirovannie polzovatelya mogut posmotret sayt
+# no ne mogut dobavlyat, udolyat, obnovit posti

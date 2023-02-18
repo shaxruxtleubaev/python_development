@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container py-3 m-3" style="width: 100%;">
+      <div class="card-body">
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 10%;">
+           <a class="btn btn-success" href="/app/" role="button">Back</a>
+        </div>
+        <p></p>
+        <img src="{{ app.image.url }}" style="width: 75%" class="img-fluid rounded-start" alt="...">
+        <h1 class="card-title">{{app.name}}</h1>
+        <p></p>
+        <h5 class="card-subtitle mb-2 text-muted">Available: </h5>
+        {% if app.stock == True %}
+          <p class="card-text">Yes</p>
+        {% endif %}
+        {% if app.stock == False %}
+          <p class="card-text">No</p>
+        {% endif %}
+        <h4 class="card-subtitle mb-2 text-muted">About:</h4>
+        <p class="card-text">{{app.body}}</p>
+        <h6 class="card-subtitle mb-2 text-muted">Color:</h6>
+        <p class="card-text">{{app.color}}</p>
+        <h6 class="card-subtitle mb-2 text-muted">Author:</h6>
+        <p class="card-text">{{app.author}}</p>
+        <h6 class="card-subtitle mb-2 text-muted">Post was created at:</h6>
+        <p class="card-text">{{app.date}}</p>
+
+        {% if request.user.is_staff %}
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%;">
+              <a class="btn btn-success" href="/app/{{app.id}}/update" role="button">Change</a>
+              <a class="btn btn-danger" href="/app/{{app.id}}/delete" role="button">Remove</a>
+            </div>
+<!--            <a class="btn btn-outline-success" href="/app/{{app.id}}/update" role="button">Change</a>-->
+<!--            <a class="btn btn-outline-danger" href="/app/{{app.id}}/delete" role="button">Remove</a>-->
+<!--            <a href="/app/{{app.id}}/delete" class="card-link">Remove</a>-->
+<!--            <a href="/app/{{app.id}}/update" class="card-link">Change</a>-->
+        {% endif %}
+      </div>
+    </div>
+{% endblock %}

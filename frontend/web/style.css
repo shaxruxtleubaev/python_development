@@ -1,0 +1,141 @@
+body {
+    font-size: 120%;
+    font-family: sans-serif;
+    letter-spacing: 0,25em;
+}
+#page {
+    width: fit-content;
+    margin: 10px auto 10px auto;
+    padding: 20px;
+}
+
+ul {
+    width: fit-content;
+    padding: 15px;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    position: relative;
+}
+
+
+li {
+    display: inline;
+    margin: 0px 3px;
+}
+  
+a {
+    color: #ecf0eb;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#whats {
+    font-size: 150%;
+    color: aliceblue;
+}
+
+.photo {
+    width: fit-content;
+}
+
+.words {
+    text-align: center;
+    color: #e0ded1;
+    width: auto;
+    margin-left: 1%;
+    margin-bottom: 10%;
+}
+
+.social, .social.on {
+    color: black;
+    width: fit-content;
+    background-color: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    display: inline-block;
+    text-decoration: none;
+    width: 99%;
+    border: 4px solid #6a00f4;
+    border-radius: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.social:hover{
+    animation: pulsate 1s ease-in-out;
+}
+
+a:hover, a.on {
+    color: #ecf0eb;
+    background-color: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    display: inline-block;
+    text-decoration: none;
+    padding: 1px 1px;
+    border: 4px solid #6a00f4;
+    border-radius: 3px;
+}
+a:hover{
+    animation: pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate {
+    0%{
+        box-shadow: 
+        0 0 5px #5ddcff,
+        0 0 10px #4e00c2;
+    }
+}
+
+.content {
+  margin: 3%;
+}
+
+html {
+    height:100%;
+  }
+  
+  body {
+    margin:0;
+  }
+  
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #00406c 50%, #003a61 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  
+  .content {
+    background-color:#f4f1de;
+    border-radius:.25em;
+    box-shadow:0 0 .25em #a8dadc;
+    box-sizing:border-box;
+    left:50%;
+    padding:10vmin;
+    position:fixed;
+    text-align:center;
+    top:50%;
+    transform:translate(-50%, -50%);
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }

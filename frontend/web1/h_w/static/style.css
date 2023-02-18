@@ -1,0 +1,72 @@
+b {
+   font-size: 200%; 
+   margin-left: 1%;
+}
+
+.blue_lines {
+    font-size: 150%;
+    border: 1px;
+    background: rgb(185, 177, 255);
+    margin-top: 1%;
+    padding: 1%;
+    color: blue;
+    font-weight: bold;
+}
+
+.text {
+    font-size: 120%;
+    margin-top: 1%;
+}
+
+.blue_words {
+    font-size: 120%;
+    color: blue;
+}
+
+.table {
+    border: 2px solid black;
+    text-align: center;
+}
+
+.table th{
+    border: 1px solid black;
+    text-align: center;
+    width: 200px;
+}
+
+.table td{
+    border: 1px solid black;
+    text-align: center;
+    width: 200px;
+}
+
+.table .table_words {
+    font-weight: bold;
+}
+
+.table .grey_back{
+    background: rgb(207, 205, 205);
+}
+
+.table .blue_words{
+    color: blue;
+}
+
+.table .cyan_words{
+    color: rgb(49, 181, 214);
+}
+
+#HCI {
+    font-weight: bold;
+}
+
+.reg {
+    margin-bottom: 100px;
+}
+
+#image {
+    float: right;
+    z-index: 50;
+}
+
+

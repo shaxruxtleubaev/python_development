@@ -1,0 +1,35 @@
+ul {
+	font-family: roboto;
+	display: inline;
+	display: inline-flex;
+	transform: scale(10);
+	transition: 
+}
+
+ul > li {
+	font-family: impact;
+	font-size: 30px;
+}
+ol > li {
+	font-family: initial;
+}
+
+#b {
+	font-size: 2em;
+}
+
+.a {
+	font-family: sans-serif;
+	font-size: 30px;
+}
+
+p {
+	padding: 50px
+	font-family: monospace;
+}
+div {
+	border: solid 3px;
+	border-radius: 5px;
+	padding-left: 300px;
+}
+

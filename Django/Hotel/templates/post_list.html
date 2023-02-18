@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if request.user.is_staff %}
+        <a href="/listings/create/" class="text-blue-500">Создать пост</a>
+    {% endif %}
+    {% for listing in listings %}
+        <div class="mt-2 px-3 py-2 bg-gray-100 rounded-sm">
+            <h3 class="text-3xl text-gray-900">{{ listing.title }}</h3>
+            <a href="/listings/{{listing.id}}/" class="text-blue-500">
+                Подробно
+            </a>
+        </div>
+    {% endfor %}
+{% endblock %}

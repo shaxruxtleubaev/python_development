@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Quote login
+{% endblock title %}
+
+{% block content %}
+    <h1>Please login</h1>
+    <p>You must be logged in to submit or view quotes.</p>
+    <form method="post" action="{% url 'login' %}">
+        <table>
+            {{ form.as_table }}
+            {% csrf_token %}
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="login"></td>
+            </tr>
+        </table>
+        <p>
+            Not registered yet?
+            <a href="{% url 'register' %}">Register here</a>
+        </p>
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+{% endblock content %}

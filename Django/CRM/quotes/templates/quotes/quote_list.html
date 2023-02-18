@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	View all quotes
+{% endblock %}
+
+
+{% block content %}
+	<h1>View all quotes</h1>
+	<table style="border-collapse: collapse">
+		<tr class="quotehdr">
+			<th>ID</th>
+			<th>Client name</th>
+			<th>Company</th>
+			<th>Submitted</th>
+			<th>Quotedate</th>
+			<th>Quoteprice</th>
+		</tr>
+		{% for quote in all_quotes %}
+			<tr class="quoterow {% cycle '' 'altrow' %}">
+        		<td>
+                    <a href="{% url 'quote-detail' quote.id %}">
+                        {{quote.id}}
+                    </a>
+                </td>
+        		<td>{{quote.name}}</td>
+        		<td>{{quote.company}}</td>
+        		<td>{{quote.submitted|date:"d-m-y" }}</td>
+        		<td>{{quote.quotedate|date:"d-m-y"}}</td>
+        		<td>${{quote.quoteprice|default:"--"}}</td>
+    		</tr>
+		{% endfor %}
+	</table>
+{% endblock content %}
